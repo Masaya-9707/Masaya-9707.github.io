@@ -1,0 +1,106 @@
+@import "_reset.scss";
+@import "_mixin.scss";
+
+body {
+  height: 2000px;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: darksalmon;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: /* 60px-120px=-60px */ -60px;
+  z-index: 1;
+}
+.g-nav > ul {
+  display: flex;
+}
+.g-nav li {
+  margin: 0 16px;
+}
+.g-nav a {
+  display: block;
+  padding: 16px;
+  color: #fff;
+  align-items: center;
+  overflow: hidden;
+}
+.g-nav span {
+  display: block;
+  text-align: center;
+  line-height: 1.2;
+  color: blue;
+  font-size: 14px;
+  padding-bottom: 6px;
+}
+.g-nav a::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  transform: scale(0);
+}
+.g-nav a:hover::after {
+  transform: scale(1);
+  transition: 0.5s;
+}
+h2 {
+  text-align: center;
+  @include font-size(40);
+  margin: 100px auto;
+}
+h2::after {
+  display: block;
+  content: "";
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgb(255, 0, 0) 5px,
+    rgb(255, 255, 255) 7px,
+    rgb(5, 184, 29) 9px
+  );
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+.video-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.video-wrapper > video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  width: 50%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 100px auto 0;
+}
+.content > h2 {
+  margin-bottom: 50px;
+}
+.content p {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
